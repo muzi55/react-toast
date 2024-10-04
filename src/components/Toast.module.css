@@ -1,0 +1,56 @@
+:root {
+  --toast-success: #2ecc71;
+  --toast-error: #e74c3c;
+}
+
+.toast {
+  background: white;
+  min-width: 120px;
+  position: fixed;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.top-center {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+.bottom-center {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+.success {
+  border: 1px solid var(--toast-success);
+  border-left: 5px solid var(--toast-success);
+}
+
+.error {
+  border: 1px solid var(--toast-error);
+  border-left: 5px solid var(--toast-error);
+}
