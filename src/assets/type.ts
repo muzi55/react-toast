@@ -5,7 +5,11 @@ export type ToastState = "success" | "error";
 export interface IToastProps {
   position: ToastPosition;
   duration: number;
-  children: React.ReactNode;
+  message: string;
   state: ToastState;
   multiple: boolean;
+}
+
+export interface IToastArray extends IToastProps {
+  id: number;
 }

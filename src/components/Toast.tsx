@@ -10,14 +10,31 @@ const toastPosition: Record<ToastPosition, string> = {
   "bottom-right": "bottom-right",
 };
 
+interface IToast extends IToastProps {
+  index: number;
+}
+
 const toastState: Record<ToastState, string> = {
   success: "success",
   error: "error",
 };
 
-function Toast({ position = "top-right", duration = 1200, children, state = "success", multiple = true }: IToastProps) {
+function Toast({
+  position = "top-right",
+  duration = 1200,
+  message,
+  state = "success",
+  multiple = true,
+  index,
+}: IToast) {
   return (
-    <div className={`${styles.toast} ${styles[toastPosition[position]]} ${styles[toastState[state]]}`}>{children}</div>
+    <div
+      className={`${styles.toast} ${styles[toastPosition[position]]} ${styles[toastState[state]]}`}
+      style={{
+        transform: `translateY(${index * 100}px)`, // index에 따라 Y축으로 이동
+      }}>
+      {message}
+    </div>
   );
 }
 
